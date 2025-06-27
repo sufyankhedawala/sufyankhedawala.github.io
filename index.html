@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechVision - Innovative IT Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.3s; }
+    .fade-in-delay-2 { animation-delay: 0.6s; }
+    .fade-in-delay-3 { animation-delay: 0.9s; }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+    .animate-marquee {
+      animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full bg-blue-700 text-white shadow-lg z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+      <h1 class="text-2xl font-extrabold tracking-wide">TechVision</h1>
+      <button id="menuToggle" class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="menu" class="hidden md:flex gap-6 text-sm">
+        <a href="#services" class="hover:underline transition">Services</a>
+        <a href="#portfolio" class="hover:underline transition">Portfolio</a>
+        <a href="#testimonials" class="hover:underline transition">Testimonials</a>
+        <a href="#about" class="hover:underline transition">About</a>
+        <a href="#contact" class="hover:underline transition">Contact</a>
+      </nav>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 pb-4">
+      <a href="#services" class="block py-1 hover:underline">Services</a>
+      <a href="#portfolio" class="block py-1 hover:underline">Portfolio</a>
+      <a href="#testimonials" class="block py-1 hover:underline">Testimonials</a>
+      <a href="#about" class="block py-1 hover:underline">About</a>
+      <a href="#contact" class="block py-1 hover:underline">Contact</a>
+    </div>
+  </header>
+
+  <div class="h-20 md:h-16"></div>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-20 text-center bg-white fade-in px-4">
+    <h2 class="text-5xl font-extrabold text-blue-700 fade-in-delay-1">Empowering Your Business with Technology</h2>
+    <p class="text-lg text-gray-600 mt-4 fade-in-delay-2">Scalable IT solutions to drive your business forward — fast, reliable, and custom-tailored.</p>
+    <div class="mt-8 fade-in-delay-3">
+      <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Let's Talk</a>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <section class="bg-blue-100 py-2 text-center text-sm text-blue-900 font-medium tracking-wide">
+    <div class="overflow-hidden whitespace-nowrap animate-marquee">💼 Trusted by startups | ⚙️ Enterprise-grade software | 🌐 Global delivery | 🧠 AI & Automation Experts</div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-blue-50 px-4 fade-in">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-800 mb-10">Our Services</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+          <h4 class="font-semibold text-xl">Web Development</h4>
+          <p class="text-gray-600">Dynamic, responsive websites using modern tech stacks.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+          <h4 class="font-semibold text-xl">App Development</h4>
+          <p class="text-gray-600">iOS and Android apps crafted with user experience in mind.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-brain text-4xl text-blue-600 mb-4"></i>
+          <h4 class="font-semibold text-xl">AI & Automation</h4>
+          <p class="text-gray-600">Machine learning and process automation tailored for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20 bg-white px-4 fade-in">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-800 mb-10">Our Work</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition">
+          <img src="https://via.placeholder.com/400x200" class="rounded mb-3" alt="Project 1">
+          <h4 class="font-semibold text-lg text-blue-700">E-Commerce Website</h4>
+          <p class="text-sm text-gray-600">Fully custom online store with admin panel & analytics.</p>
+        </div>
+        <div class="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition">
+          <img src="https://via.placeholder.com/400x200" class="rounded mb-3" alt="Project 2">
+          <h4 class="font-semibold text-lg text-blue-700">Health Dashboard</h4>
+          <p class="text-sm text-gray-600">Modern web design for hospitals and online consultations.</p>
+        </div>
+        <div class="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition">
+          <img src="https://via.placeholder.com/400x200" class="rounded mb-3" alt="Project 3">
+          <h4 class="font-semibold text-lg text-blue-700">Invoice Generator</h4>
+          <p class="text-sm text-gray-600">Invoice & receipt software for daily business tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-blue-50 px-4 fade-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-800 mb-10">What Clients Say</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="italic">"TechVision transformed our digital strategy. Excellent team and timely delivery!"</p>
+          <h4 class="mt-4 font-semibold">— Aditi R., Healthcare Manager</h4>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="italic">"From ideation to launch, everything was handled perfectly. Highly recommend!"</p>
+          <h4 class="mt-4 font-semibold">— Mehul S., Startup Founder</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-white px-4 fade-in">
+    <div class="max-w-xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-800 mb-4">Get In Touch</h3>
+      <p class="mb-6 text-gray-700">Let's start your project today. Fill out the form and we'll contact you soon.</p>
+      <form class="space-y-4 text-left" action="mailto:rskhedawala@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition">Send Message</button>
+      </form>
+      <p class="text-sm text-gray-600 mt-4">or email us at <a href="mailto:rskhedawala@gmail.com" class="text-blue-700 underline">rskhedawala@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-blue-700 text-white text-center px-4">
+    <p class="mb-2">&copy; 2025 TechVision. All rights reserved.</p>
+    <div class="flex justify-center gap-4 text-lg">
+      <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="hover:text-gray-300"><i class="fab fa-github"></i></a>
+      <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
