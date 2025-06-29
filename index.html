@@ -13,16 +13,11 @@
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeIn 1s ease-out forwards;
+      transition: all 1s ease-out;
     }
-    .fade-in-delay-1 { animation-delay: 0.3s; }
-    .fade-in-delay-2 { animation-delay: 0.6s; }
-    .fade-in-delay-3 { animation-delay: 0.9s; }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: none;
-      }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
     }
     .animate-marquee {
       animation: marquee 15s linear infinite;
@@ -36,24 +31,26 @@
 <body class="bg-gradient-to-br from-blue-50 to-white text-gray-800 font-sans">
 
   <!-- Navbar -->
-  <header class="fixed top-0 w-full bg-blue-700 text-white shadow-lg z-50">
+  <header class="fixed top-0 w-full bg-blue-700 text-white shadow-md z-50 transition duration-500">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
-      <h1 class="text-2xl font-extrabold tracking-wide">TechVision</h1>
-      <button id="menuToggle" class="md:hidden text-white focus:outline-none">
+      <h1 class="text-2xl font-extrabold tracking-wide hover:text-yellow-300 transition">TechVision</h1>
+      <button id="menuToggle" class="md:hidden text-white text-2xl focus:outline-none">
         <i class="fas fa-bars"></i>
       </button>
-      <nav id="menu" class="hidden md:flex gap-6 text-sm">
-        <a href="#services" class="hover:underline transition">Services</a>
-        <a href="#portfolio" class="hover:underline transition">Portfolio</a>
-        <a href="#testimonials" class="hover:underline transition">Testimonials</a>
-        <a href="#contact" class="hover:underline transition">Contact</a>
+      <nav id="menu" class="hidden md:flex gap-6 text-sm items-center">
+        <a href="#services" class="hover:text-yellow-300 transition">Services</a>
+        <a href="#portfolio" class="hover:text-yellow-300 transition">Portfolio</a>
+        <a href="#testimonials" class="hover:text-yellow-300 transition">Testimonials</a>
+        <a href="#about" class="hover:text-yellow-300 transition">About</a>
+        <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
       </nav>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 pb-4">
-      <a href="#services" class="block py-1 hover:underline">Services</a>
-      <a href="#portfolio" class="block py-1 hover:underline">Portfolio</a>
-      <a href="#testimonials" class="block py-1 hover:underline">Testimonials</a>
-      <a href="#contact" class="block py-1 hover:underline">Contact</a>
+    <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 pb-4 bg-blue-600 transition-all duration-300">
+      <a href="#services" class="block py-2 hover:text-yellow-300">Services</a>
+      <a href="#portfolio" class="block py-2 hover:text-yellow-300">Portfolio</a>
+      <a href="#testimonials" class="block py-2 hover:text-yellow-300">Testimonials</a>
+      <a href="#about" class="block py-2 hover:text-yellow-300">About</a>
+      <a href="#contact" class="block py-2 hover:text-yellow-300">Contact</a>
     </div>
   </header>
 
@@ -61,16 +58,16 @@
 
   <!-- Hero -->
   <section class="pt-24 pb-20 text-center bg-white fade-in px-4">
-    <h2 class="text-5xl font-extrabold text-blue-700 fade-in-delay-1">Empowering Your Business with Technology</h2>
-    <p class="text-lg text-gray-600 mt-4 fade-in-delay-2">Scalable IT solutions to drive your business forward — fast, reliable, and custom-tailored.</p>
-    <div class="mt-8 fade-in-delay-3">
-      <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Let's Talk</a>
+    <h2 class="text-5xl font-extrabold text-blue-700 mb-4">Empowering Your Business with Technology</h2>
+    <p class="text-lg text-gray-600 mt-4">Scalable IT solutions to drive your business forward — fast, reliable, and custom-tailored.</p>
+    <div class="mt-8">
+      <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 hover:scale-105 transform transition duration-300">Let's Talk</a>
     </div>
   </section>
 
   <!-- Marquee -->
   <section class="bg-blue-100 py-2 text-center text-sm text-blue-900 font-medium tracking-wide">
-    💼 Trusted by startups | ⚙️ Enterprise-grade software | 🌐 Global delivery | 🧠 AI & Automation Experts
+    <div class="">💼 Trusted by startups | ⚙️ Enterprise-grade software | 🌐 Global delivery | 🧠 AI & Automation Experts</div>
   </section>
 
   <!-- Services -->
@@ -78,20 +75,20 @@
     <div class="max-w-6xl mx-auto text-center">
       <h3 class="text-3xl font-bold text-blue-800 mb-10">Our Services</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-500">
+          <i class="fas fa-code text-4xl text-blue-600 mb-4 animate-bounce"></i>
           <h4 class="font-semibold text-xl">Web Development</h4>
           <p class="text-gray-600">Dynamic, responsive websites using modern tech stacks.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
-          <h4 class="font-semibold text-xl">App Development</h4>
-          <p class="text-gray-600">iOS and Android apps crafted with user experience in mind.</p>
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-500">
+          <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4 animate-bounce"></i>
+          <h4 class="font-semibold text-xl">Web Designs</h4>
+          <p class="text-gray-600">We create beautiful web designs for easy customer engagement.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <i class="fas fa-brain text-4xl text-blue-600 mb-4"></i>
-          <h4 class="font-semibold text-xl">AI & Automation</h4>
-          <p class="text-gray-600">Machine learning and process automation tailored for you.</p>
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-500">
+          <i class="fas fa-brain text-4xl text-blue-600 mb-4 animate-bounce"></i>
+          <h4 class="font-semibold text-xl">Software Development</h4>
+          <p class="text-gray-600">Useful, easy-to-use software for your daily operations.</p>
         </div>
       </div>
     </div>
@@ -102,20 +99,20 @@
     <div class="max-w-6xl mx-auto text-center">
       <h3 class="text-3xl font-bold text-blue-800 mb-10">Our Work</h3>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition">
-          <img src="https://via.placeholder.com/400x200" class="rounded mb-3" alt="Project 1">
+        <div class="bg-gray-100 rounded-xl p-4 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-500">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.aDD7nsrlidP1IEKCBjBaaQHaGC?pid=Api&P=0&h=180" class="rounded mb-3 mx-auto" alt="Project 1">
           <h4 class="font-semibold text-lg text-blue-700">E-Commerce Website</h4>
-          <p class="text-sm text-gray-600">Fully custom online store with admin panel & analytics.</p>
+          <p class="text-sm text-gray-600">Custom online store with admin panel & analytics.</p>
         </div>
-        <div class="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition">
-          <img src="https://via.placeholder.com/400x200" class="rounded mb-3" alt="Project 2">
+        <div class="bg-gray-100 rounded-xl p-4 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-500">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.zj69t3ezeRDrVh6zPSm1nAHaFj?pid=Api&P=0&h=180" class="rounded mb-3 mx-auto" alt="Project 2">
           <h4 class="font-semibold text-lg text-blue-700">Health Dashboard</h4>
-          <p class="text-sm text-gray-600">Modern web design for hospitals and online consultations.</p>
+          <p class="text-sm text-gray-600">Modern design for hospitals and consultations.</p>
         </div>
-        <div class="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition">
-          <img src="https://via.placeholder.com/400x200" class="rounded mb-3" alt="Project 3">
+        <div class="bg-gray-100 rounded-xl p-4 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-500">
+          <img src="https://www.webfx.com/wp-content/uploads/2021/10/invoice-generator-08zoho.png" class="rounded mb-3 mx-auto" alt="Project 3">
           <h4 class="font-semibold text-lg text-blue-700">Invoice Generator</h4>
-          <p class="text-sm text-gray-600">Invoice & receipt software for daily business tasks.</p>
+          <p class="text-sm text-gray-600">Software for fast invoice creation and tracking.</p>
         </div>
       </div>
     </div>
@@ -126,14 +123,32 @@
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-3xl font-bold text-blue-800 mb-10">What Clients Say</h3>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow">
+        <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition">
           <p class="italic">"TechVision transformed our digital strategy. Excellent team and timely delivery!"</p>
           <h4 class="mt-4 font-semibold">— Aditi R., Healthcare Manager</h4>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
+        <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition">
           <p class="italic">"From ideation to launch, everything was handled perfectly. Highly recommend!"</p>
           <h4 class="mt-4 font-semibold">— Mehul S., Startup Founder</h4>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-gradient-to-r from-white to-blue-50 px-4 fade-in">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12">
+      <div class="text-center md:text-left">
+        <h3 class="text-3xl font-bold text-blue-800 mb-4">About TechVision</h3>
+        <p class="text-gray-700 mb-4">
+          At <strong>TechVision</strong>, we craft innovative digital solutions to help businesses thrive in today’s tech-driven world. From full-stack development to AI, we deliver with excellence.
+        </p>
+        <p class="text-gray-600">
+          Our team blends creativity and technical expertise to solve complex problems and build lasting digital products.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.sy2WDBD89Csb70TEiOzyCwHaGp?pid=Api&P=0&h=180" alt="Teamwork" class="rounded-xl shadow-lg hover:scale-105 transform transition duration-500" style="height: 400px;">
       </div>
     </div>
   </section>
@@ -164,15 +179,28 @@
     </div>
   </footer>
 
-  <!-- Mobile Nav Toggle -->
+  <!-- JS -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
+
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
     });
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7856225427276334"
-     crossorigin="anonymous"></script>
 </body>
 </html>
