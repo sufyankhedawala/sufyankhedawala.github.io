@@ -7,22 +7,41 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeIn 0.8s ease-out forwards;
-    }
+    .fade-in { opacity: 0; transform: translateY(30px); animation: fadeIn 0.8s ease-out forwards; }
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-blue-100 to-white text-gray-800 min-h-screen flex items-center justify-center py-10">
+<body class="bg-gradient-to-br from-blue-100 to-white text-gray-800 min-h-screen">
 
-  <div class="max-w-3xl w-full bg-white p-8 rounded-xl shadow-2xl fade-in">
+<!-- ✅ Navbar -->
+<header class="fixed top-0 w-full bg-blue-700 text-white z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+    <a href="index.html" class="text-2xl font-extrabold tracking-wide hover:text-yellow-300">TechVision</a>
+    <button id="menuToggle" class="md:hidden text-white text-3xl focus:outline-none">
+      &#9776;
+    </button>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-6 text-sm items-center">
+      <a href="index.html" class="hover:text-yellow-300">Home</a>
+      <a href="schemes.html" class="hover:text-yellow-300">Schemes</a>
+      <a href="help.html" class="hover:text-yellow-300">Help</a>
+    </nav>
+  </div>
+  <!-- Mobile Nav -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-blue-600 px-4 pb-4">
+    <a href="index.html" class="block py-2 hover:text-yellow-300">Home</a>
+    <a href="schemes.html" class="block py-2 hover:text-yellow-300">Schemes</a>
+    <a href="help.html" class="block py-2 hover:text-yellow-300">Help</a>
+  </div>
+</header>
+
+<div class="h-20"></div> <!-- Space below fixed header -->
+
+<!-- 💡 Page Content Starts Here -->
+<main class="flex items-center justify-center py-10 px-4 fade-in">
+  <div class="max-w-3xl w-full bg-white p-8 rounded-xl shadow-2xl">
     <div class="mb-8 text-center">
       <h2 class="text-3xl font-bold text-blue-800 mb-2" id="planTitle">Plan Title</h2>
       <p class="text-lg text-blue-600 font-semibold" id="planPrice">Plan Price</p>
@@ -38,36 +57,56 @@
 
       <input name="Name" required placeholder="Your Name" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
       <input name="Email" type="email" required placeholder="Your Email" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
+      <input name="Phone" type="tel" required placeholder="Your Phone Number" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
       <input name="Business Name" required placeholder="Your Business Name" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
       <input name="Budget" required placeholder="Your Budget" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
-      <textarea name="Website Type" required placeholder="Type of Website You Need" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"></textarea>
-      <input name="Pages Count" type="number" required placeholder="Number of Pages" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
-      <textarea name="Reason" required placeholder="Why do you need this website?" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"></textarea>
-      <textarea name="Additional Notes" placeholder="Additional Notes (Optional)" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"></textarea>
+
+      <select name="Website Type" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition">
+        <option value="" disabled selected>What type of website/software?</option>
+        <option value="Portfolio">Portfolio</option>
+        <option value="E-commerce">E-commerce</option>
+        <option value="Business">Business Website</option>
+        <option value="Mobile App">Mobile App</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input name="Pages Count" type="number" required placeholder="Estimated Pages" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition" />
+      <textarea name="Reason" required placeholder="Why do you need this?" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"></textarea>
+      <textarea name="Additional Notes" placeholder="Any special notes (Optional)" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"></textarea>
 
       <div class="text-right pt-4">
         <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition shadow-md">Submit Request</button>
       </div>
     </form>
   </div>
+</main>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const plan = urlParams.get('plan');
-    const price = urlParams.get('price');
-    const desc = urlParams.get('desc');
-    const features = urlParams.get('features');
+<!-- ✅ Script to toggle mobile nav -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-    document.getElementById('planTitle').textContent = plan || "Custom Plan";
-    document.getElementById('planPrice').textContent = price || "";
-    document.getElementById('planDesc').textContent = desc || "";
-    document.getElementById('planFeatures').textContent = features ? "Features: " + features : "";
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
 
-    document.getElementById('hiddenPlan').value = plan || "";
-    document.getElementById('hiddenPrice').value = price || "";
-    document.getElementById('hiddenDesc').value = desc || "";
-    document.getElementById('hiddenFeatures').value = features || "";
-  </script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const plan = urlParams.get('plan');
+  const price = urlParams.get('price');
+  const desc = urlParams.get('desc');
+  const features = urlParams.get('features');
+
+  document.getElementById('planTitle').textContent = plan || "Custom Plan";
+  document.getElementById('planPrice').textContent = price || "";
+  document.getElementById('planDesc').textContent = desc || "";
+  document.getElementById('planFeatures').textContent = features ? "Features: " + features : "";
+
+  document.getElementById('hiddenPlan').value = plan || "";
+  document.getElementById('hiddenPrice').value = price || "";
+  document.getElementById('hiddenDesc').value = desc || "";
+  document.getElementById('hiddenFeatures').value = features || "";
+</script>
 
 </body>
 </html>
