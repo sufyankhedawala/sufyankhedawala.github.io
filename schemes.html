@@ -12,14 +12,14 @@
 </head>
 <body class="bg-blue-50 text-gray-800 font-sans">
 
-<!-- Navbar -->
+<!-- ✅ Navbar -->
 <header class="fixed top-0 w-full bg-blue-700 text-white shadow-md z-50">
   <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
-    <a href="index.html" class="text-2xl font-extrabold tracking-wide hover:text-yellow-300 transition">TechVision</a>
-    <button id="menuToggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+    <a href="index.html" class="text-2xl font-extrabold tracking-wide hover:text-yellow-300">TechVision</a>
+    <button id="menuToggle" class="md:hidden text-white text-3xl">&#9776;</button>
     <nav id="menu" class="hidden md:flex gap-6 text-sm items-center"></nav>
   </div>
-  <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 pb-4 bg-blue-600"></div>
+  <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 pb-4 bg-blue-600 transition-all duration-300"></div>
 </header>
 
 <div class="h-20 md:h-16"></div>
@@ -39,21 +39,58 @@
   <div>
     <h2 class="text-3xl font-bold text-blue-800 mb-6">Free Start Plan</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div onclick="openModal('Free Basic', '$0', 'Includes essential tools to get started', ['1 Project', 'Community Support'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+      <div onclick="openModal('Free Basic', '$0.10/view (conditional)', 'This website is free but once,If you get 500 views on your website then we will make charges on your website per view ,you can add and remove anything I. This scheme ,but it Make some small amount of charges, if you get 500 views then in the end of month you will get bill for all maintenance and views on your website ', ['Web hosting', 'Free domain ','Basic design','Basic website','3 pages','Custom changes','Custom design','Free form','And many more contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
         <h3 class="text-xl font-bold text-blue-600 mb-2">Basic</h3>
         <p class="text-gray-600">Simple and effective features for beginners.</p>
       </div>
-      <div onclick="openModal('Free Standard', '$0', 'A bit more power for early-stage teams', ['2 Projects', 'Basic Reports'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+      <div onclick="openModal('Free Standard', '$0.20/view (conditional)', 'This website is free but once,If you get 700 views on your website then we will make charges on your website per view,if you get 700 views then in the end of month you will get bill for all maintenance and views on your website', ['Web hosting','Free domain ','Standard design','Standard website','5 number of pages','Checkout form','Payment getaway','Free images','Free cards','And many more ,contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
         <h3 class="text-xl font-bold text-blue-600 mb-2">Standard</h3>
         <p class="text-gray-600">Extra tools to help you grow faster.</p>
       </div>
-      <div onclick="openModal('Free Premium', '$0', 'All features free for a limited time', ['3 Projects', 'Analytics Access'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+      <div onclick="openModal('Free Premium', '$0.30/view (conditional)', 'This website is free but once,If you get 800 views on your website then we will make charges on your website per view,if you get 800 views then in the end of month you will get bill for all maintenance and views on your website', ['Web hosting','Free domain ','Premium design','Premium website','Custom number of pages','Custom changes','Custom design ','Free form','Email section','Checkout form','Payment getaway','Free images','Free cards','And many more contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
         <h3 class="text-xl font-bold text-blue-600 mb-2">Premium</h3>
         <p class="text-gray-600">Experience the best — for free.</p>
       </div>
     </div>
   </div>
 
+  <div>
+    <h2 class="text-3xl font-bold text-blue-800 mb-6">EMI Plans</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div onclick="openModal('EMI Basic', 'Price : $130,Per month: $10', 'In this website you will get all things that are showing but in payment you have to pay amount per months in the end of month you will get your bill for your website,this EMI will work for only 12 months after it you does not want to pay any bill.', ['Web hosting', 'Free domain ','Basic design','Basic website','3 pages','Custom changes','Custom design','Free form','And many more contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Basic</h3>
+        <p class="text-gray-600">Simple and effective features for beginners.</p>
+      </div>
+      <div onclick="openModal('EMI Standard', 'Price: $250,Per month:$20', 'In this website you will get all things that are showing, but in payment you have to pay amount per months in the end of month you will get your bill for your website, this EMI will work for only 12 months after it you doesn not want to pay any bill.', ['Web hosting','Free domain ','Standard design','Standard website','5 number of pages','Checkout form','Payment getaway','Free images','Free cards','And many more ,contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Standard</h3>
+        <p class="text-gray-600">Extra tools to help you grow faster.</p>
+      </div>
+      <div onclick="openModal('EMI Premium', 'Price: $330,PER MONTH: $28', 'In this website you will get all things that are showing, but in payment you have to pay amount per months in the end of month you will get your bill for your website, this EMI will work for only 12 months after it you does not want to pay any bill.', ['Web hosting','Free domain ','Premium design','Premium website','Custom number of pages','Custom changes','Custom design ','Free form','Email section','Checkout form','Payment getaway','Free images','Free cards','And many more contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Premium</h3>
+        <p class="text-gray-600">Experience the best — for free.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- custon website schmes-->
+
+    <div>
+    <h2 class="text-3xl font-bold text-blue-800 mb-6">custom websites Plans</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div onclick="openModal('Basic webiste/software', 'Price:$130', 'In this website you will get all things that are showing but in in the end of month you have to pay $0.10 only , just pay the amount and get the website.no EMI,no extra cost .You can also customize your website.', ['Web hosting', 'Free domain ','Basic design','Basic website','3 pages','Custom changes','Custom design','Free form','And many more contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Basic webiste</h3>
+        <p class="text-gray-600">Simple and effective features for beginners.</p>
+      </div>
+      <div onclick="openModal('Standard website/software', 'Price: $250', 'In this website you will get all things that are showing but in in the end of month you have to pay $0.10 only , just pay the amount and get the website.no EMI,no extra cost .You can also customize your website.', ['Web hosting','Free domain ','Standard design','Standard website','5 number of pages','Checkout form','Payment getaway','Free images','Free cards','And many more ,contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Standard</h3>
+        <p class="text-gray-600">Extra tools to help you grow faster.</p>
+      </div>
+      <div onclick="openModal('EMI Premium', 'Price: $330','In this website you will get all things that are showing but in in the end of month you have to pay $0.10 only , just pay the amount and get the website.no EMI,no extra cost .You can also customize your website.', ['Web hosting','Free domain ','Premium design','Premium website','Custom number of pages','Custom changes','Custom design ','Free form','Email section','Checkout form','Payment getaway','Free images','Free cards','And many more contact for more information or changes for scheme'])" class="bg-white p-6 rounded-xl shadow hover:shadow-xl cursor-pointer">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Premium</h3>
+        <p class="text-gray-600">Experience the best — for free.</p>
+      </div>
+    </div>
+  </div>
   <!-- Add other plans below... -->
 </section>
 
